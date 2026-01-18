@@ -1,4 +1,9 @@
-const findTheOldest = function() {
+const findTheOldest = function(people) {
+        return people.reduce((oldest, person) => {
+        return (person.yearOfDeath || (new Date()).getFullYear()) - person.yearOfBirth
+        > (oldest.yearOfDeath || (new Date()).getFullYear()) - oldest.yearOfBirth
+        ? person : oldest
+    })
 
 };
 
